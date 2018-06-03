@@ -41,7 +41,7 @@ class Account(object):
         doc = {
             cls.auth_id: auth_id,
             cls.password: pwd_md5,
-            cls.role: role,
+            cls.role: role if role else 0,
             cls.owner: owner,
         }
         ret = cls.collection.insert_one(document=doc)
